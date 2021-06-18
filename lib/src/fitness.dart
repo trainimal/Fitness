@@ -40,9 +40,7 @@ class Fitness {
       'bucket_by_time': bucketByTime,
       'time_unit': timeUnit.value,
     }).then(
-      (response) => response!
-          .map((data) => DataPoint.fromJson(Map<String, dynamic>.from(data)))
-          .toList(),
+      (response) => response?.map((data) => DataPoint.fromJson(Map<String, dynamic>.from(data))).toList() ?? [],
     );
   }
 }
